@@ -1,4 +1,4 @@
-<title>講座運営AIキット｜Claude Codeスキル3点</title>
+<title>講座運営AIキット｜Claude Codeスキル4点</title>
 <style>
   :root{
     --ground:#faf7f0; --panel:#ffffff; --panel-2:#f3eee3;
@@ -52,7 +52,7 @@
   .sub{color:var(--muted);margin:0 0 24px;font-size:15px}
 
   /* 3スキル */
-  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   @media (max-width:820px){.skills{grid-template-columns:1fr}}
   .sk{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
     padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column}
@@ -128,7 +128,7 @@
     <div>
       <p class="eyebrow">Claude Code スキル ・ <span class="tag-mono" style="text-transform:none;letter-spacing:0">my-koza-ai</span></p>
       <h1>講座運営を、<br>AIに手伝わせる。</h1>
-      <p class="lead">講座や継続サポートを運営していると増えていく「めんどくさいところ」を、Claude Codeに任せるスキル3点セット。<b>初回にあなたのやり方を聞き取って</b>、あなた専用の形で組み上げます。</p>
+      <p class="lead">講座や継続サポートを運営していると増えていく「めんどくさいところ」を、Claude Codeに任せるスキル4点セット。<b>初回にあなたのやり方を聞き取って</b>、あなた専用の形で組み上げます。</p>
       <div class="steps">
         <div class="s"><span class="n">1</span>導入する</div>
         <div class="s"><span class="n">2</span>やり方を答える</div>
@@ -136,68 +136,86 @@
       </div>
     </div>
     <div class="stack" aria-hidden="true">
-      <div class="card"><div class="n">01 FEEDBACK</div><div class="t">今月の変化を整理しました</div><div class="d">前回との差分／下書き／次月に見るポイント</div></div>
-      <div class="card"><div class="n">02 EBOOK</div><div class="t">旧版から構成を立て直します</div><div class="d">構成案を3つ ⇢ 章ごとに執筆</div></div>
-      <div class="card"><div class="n">03 MEETING</div><div class="t">前回の約束が2件あります</div><div class="d">現在地／宿題／今日話すこと</div></div>
+      <div class="card"><div class="n">01 LINE REPLY</div><div class="t">返信案を3つ用意しました</div><div class="d">シンプル／次の1手提案／丁寧</div></div>
+      <div class="card"><div class="n">02 FEEDBACK</div><div class="t">今月の変化を整理しました</div><div class="d">前回との差分／下書き／次月に見るポイント</div></div>
+      <div class="card"><div class="n">03 EBOOK</div><div class="t">旧版から構成を立て直します</div><div class="d">構成案を3つ ⇢ 章ごとに執筆</div></div>
+      <div class="card"><div class="n">04 MEETING</div><div class="t">前回の約束が2件あります</div><div class="d">現在地／宿題／今日話すこと</div></div>
       <div class="pill"><span>▍ 聞く → 整理する → 下書き</span></div>
     </div>
   </div>
 
   <section>
-    <h2>入っているのは、<span style="color:var(--gold)">3つ</span>。</h2>
+    <h2>入っているのは、<span style="color:var(--gold)">4つ</span>。</h2>
     <p class="sub">どれも「あなたの代わりに考える」のではなく、「あなたが判断する材料を整える」ためのものです。出てくるのは全部<b>下書き</b>です。</p>
     <div class="skills">
       <div class="sk">
         <div class="ord"><span class="b">1</span>まずこれから</div>
+        <h3>LINE返信の下書き</h3>
+        <p>お客さんから届いた質問に、<b>3パターン</b>で返信案を出します。<b>①シンプル形式</b>（答えだけ）<b>②次の1手提案形式</b>（答え＋次にやること1つ）<b>③丁寧形式</b>（受け止めてから答える）。そのうえで「今回はこれが合いそうです」と1つ推します。</p>
+        <div class="cmd">/my-line-reply</div>
+      </div>
+      <div class="sk">
+        <div class="ord"><span class="b">2</span>次にこれ</div>
         <h3>フィードバック下書き</h3>
         <p>毎月届く受講生の素材（写真・動画・報告フォーム）を読んで、前回との差分を出し、フィードバック文の下書きまで作ります。毎月必ず発生する作業なので、<b>効果がすぐ分かります。</b></p>
         <div class="cmd">/my-client-feedback</div>
       </div>
       <div class="sk">
-        <div class="ord"><span class="b">2</span>次にこれ</div>
+        <div class="ord"><span class="b">3</span>次にこれ</div>
         <h3>電子書籍リメイク</h3>
         <p>昔作った電子書籍や無料PDFを、今のお客さん像に合わせて作り直します。ゼロから書き直すのではなく、<b>旧版を読み込んで土台にする</b>ので手が止まりません。</p>
         <div class="cmd">/my-ebook-remake</div>
       </div>
       <div class="sk">
-        <div class="ord"><span class="b">3</span>最後にこれ</div>
+        <div class="ord"><span class="b">4</span>最後にこれ</div>
         <h3>面談準備</h3>
         <p>面談前にその人の記録を集めて当日メモを1枚作ります。面談後は文字起こしを渡すと、決まったこと・宿題・申し送りを記録します。<b>前と後の二刀流。</b></p>
         <div class="cmd">/my-meeting-prep</div>
       </div>
     </div>
-    <div class="callout warn"><b>⚠️ 3つ同時に始めないでください。</b> 一度に全部やろうとすると、だいたい全部中途半端になります。<b>①→②→③の順</b>で、1つがちゃんと回るようになってから次に進んでください。導入は3つまとめてで構いません。</div>
+    <div class="callout warn"><b>⚠️ 4つ同時に始めないでください。</b> 一度に全部やろうとすると、だいたい全部中途半端になります。<b>①→②→③→④の順</b>で、1つがちゃんと回るようになってから次に進んでください。導入は4つまとめてで構いません。</div>
   </section>
 
   <section class="kit">
     <h2>この1式を、そのまま渡せる</h2>
     <p class="sub">Zipをダウンロードして、下の案内文と一緒に送るだけ。受け取った人は、自分のClaude Codeに読ませれば導入できます。<b>勝手にインストールはされません</b>——必ず「導入していいですか？」の確認が入ります。</p>
     <div class="kit-actions">
-      <a class="btn primary" href="my-koza-ai-kit.zip" download>⬇ my-koza-ai-kit.zip <span class="sz">約20KB</span></a>
+      <a class="btn primary" href="my-koza-ai-kit.zip" download>⬇ my-koza-ai-kit.zip <span class="sz">約30KB</span></a>
       <button class="btn" id="copyMsg">📋 案内文をコピー</button>
     </div>
     <div class="msgbox">
-<pre id="sendMsg">【講座運営AIキット｜Claude Codeスキル3点】
+<pre id="sendMsg">【講座運営AIキット｜Claude Codeスキル4点】
 
 講座や継続サポートの運営で増えていく「めんどくさいところ」を
-Claude Codeに任せるスキルです。3つ入っています。
+Claude Codeに任せるスキルです。4つ入っています。
 
-① フィードバック下書き（/my-client-feedback）
+① LINE返信の下書き（/my-line-reply）
+お客さんから届いた質問に、3パターンで返信案を出します。
+「シンプル形式」「次の1手提案形式」「丁寧形式」の3つを出して、
+そのうえで「今回はこれが合いそうです」と1つ推します。
+過去のチャット履歴を読み込ませると、あなた自身の言い方を
+再現します。
+
+② フィードバック下書き（/my-client-feedback）
 毎月届く受講生の素材（写真・動画・報告）を整理して、前回との
 差分を出し、フィードバック文の下書きまで作ります。
 
-② 電子書籍リメイク（/my-ebook-remake）
+③ 電子書籍リメイク（/my-ebook-remake）
 昔作った電子書籍や無料PDFを、今のお客さん像に合わせて
 作り直します。旧版を読み込んで土台にするので、ゼロからより
 ずっとラクです。
 
-③ 面談準備（/my-meeting-prep）
+④ 面談準備（/my-meeting-prep）
 面談前に相手の記録を集めて当日メモを作ります。面談後は
 文字起こしを渡すと約束・宿題・申し送りを記録します。
 
 ■ 事前に必要なもの
 ・Claude Code（Mac / Windows どちらでもOK）
 それだけです。Chrome拡張などは要りません。
+
+※ ①で過去のチャット履歴をCSVで書き出したい場合のみ、
+　 LINE公式アカウントの「チャットProオプション」
+　 （月額3,000円・税別）が必要です。無くても使えます。
 
 ■ 導入のしかた
 1. Zipを解凍する
@@ -211,8 +229,8 @@ Claude Codeに任せるスキルです。3つ入っています。
 5. Claude Codeを再起動する
 
 ■ 大事なこと
-3つ入りますが、使い始めるのは1つずつにしてください。
-おすすめは ①→②→③ の順です。まず①だけ回してみてください。
+4つ入りますが、使い始めるのは1つずつにしてください。
+おすすめは ①→②→③→④ の順です。まず①だけ回してみてください。
 
 初回はどのスキルも「普段どうやっているか」を一問一答で
 聞いてきます。ここが一番大事なところなので、面倒でも
@@ -221,7 +239,7 @@ Claude Codeに任せるスキルです。3つ入っています。
 くわしい解説ページ（Zipもここから落とせます）：
 https://ryoya9595.github.io/my-koza-ai/</pre>
     </div>
-    <p class="hint">※ 導入で増えるのは <b class="tag-mono">.claude/skills/</b> の下のフォルダ3つだけ。既存のスキルや設定が消えることはありません。<br>※ このページのURLをそのまま送ってもOK。受け取った人が上のボタンからZipを落とせます。</p>
+    <p class="hint">※ 導入で増えるのは <b class="tag-mono">.claude/skills/</b> の下のフォルダ4つだけ。既存のスキルや設定が消えることはありません。<br>※ このページのURLをそのまま送ってもOK。受け取った人が上のボタンからZipを落とせます。</p>
   </section>
 
   <section>
@@ -229,7 +247,7 @@ https://ryoya9595.github.io/my-koza-ai/</pre>
     <p class="sub">どのスキルも、いきなり作り始めません。初回に「普段どうやっているか」を一問一答で聞き取って、あなた専用の設定として保存します。</p>
     <div class="use">
       <div class="row"><div class="n">1</div><div class="t"><b>何をやっているかを聞く</b><p>素材のどこを、どの順番で見ているか。「順調」と思う基準は何か。何を伝えていて、逆に何は書かないようにしているか。<b>まとめて説明する必要はありません。</b>1問ずつ聞かれるので、答えていくだけです。</p></div></div>
-      <div class="row"><div class="n">2</div><div class="t"><b>実物を2〜3個もらう</b><p>過去に書いたフィードバック（電子書籍なら旧版）を、そのまま貼ってもらいます。文章から、書き出し・順番・褒め方・よく使う言い回しを読み取ります。</p></div></div>
+      <div class="row"><div class="n">2</div><div class="t"><b>実物を読み込む</b><p>過去のチャット履歴（LINE返信）、過去に書いたフィードバック、旧版の電子書籍。実物から、書き出し・長さ・語尾の癖・よく使う言い回しを読み取ります。<b>①では「これがシンプル形式、これが丁寧形式で合ってますか？」と、あなたの過去の返信から実例を拾って見せます。</b>定義を自分で考える必要はありません。</p></div></div>
       <div class="row"><div class="n">3</div><div class="t"><b>ズレを突き合わせる</b><p>話して聞いた内容と、実際の文章が違うことがあります。そのときは黙って片方を採るのではなく、「お話では◯◯でしたが、実際は△△でした。どちらに寄せますか？」と確認します。<b>このズレを潰す作業が、型を固める一番の近道です。</b></p></div></div>
       <div class="row"><div class="n">4</div><div class="t"><b>書いてはいけない表現を決める</b><p>分野によっては危ない表現があります（「治る」「改善する」などの断定）。初回にルールを決めて設定ファイルに保存し、<b>毎回それを読んでから下書きを作ります。</b>毎回口で言う必要はありません。</p></div></div>
     </div>
@@ -256,10 +274,10 @@ https://ryoya9595.github.io/my-koza-ai/</pre>
     <h2>導入は<span style="color:var(--gold)">確認つき</span>。勝手には入らない。</h2>
     <p class="sub">受け取った人が Claude Code に手順書を読ませると、この順で進みます。</p>
     <div class="use">
-      <div class="row"><div class="n">1</div><div class="t"><b>3つのスキルが何なのかを説明する</b><p>何ができて、何をしないか。どこにファイルが入るか。</p></div></div>
-      <div class="row"><div class="n">2</div><div class="t"><b>「導入してよろしいですか？」と聞く</b><p>「はい」をもらうまで、ファイルのコピーも設定変更も一切しません。<b>3つのうち一部だけ入れることもできます。</b></p></div></div>
+      <div class="row"><div class="n">1</div><div class="t"><b>4つのスキルが何なのかを説明する</b><p>何ができて、何をしないか。どこにファイルが入るか。</p></div></div>
+      <div class="row"><div class="n">2</div><div class="t"><b>「導入してよろしいですか？」と聞く</b><p>「はい」をもらうまで、ファイルのコピーも設定変更も一切しません。<b>4つのうち一部だけ入れることもできます。</b></p></div></div>
       <div class="row"><div class="n">3</div><div class="t"><b>フォルダを作ってコピーする</b><p><code>mkdir</code> と <code>cp</code> だけ。削除・移動系のコマンドは使いません。同名スキルがあれば必ず確認します。</p></div></div>
-      <div class="row"><div class="n">4</div><div class="t"><b>使う順番を案内する</b><p>①→②→③。ここを飛ばさないよう手順書に明記してあります。</p></div></div>
+      <div class="row"><div class="n">4</div><div class="t"><b>使う順番を案内する</b><p>①→②→③→④。ここを飛ばさないよう手順書に明記してあります。</p></div></div>
     </div>
     <div class="callout">Mac / Windows どちらにも対応。手順書には<b>PowerShell用のコマンドも併記</b>してあるので、Windowsの人は「Windowsなので、PowerShell用のコマンドで進めて」と伝えれば大丈夫です。</div>
   </section>
@@ -268,10 +286,12 @@ https://ryoya9595.github.io/my-koza-ai/</pre>
     <h2>よくある質問</h2>
     <div class="qa">
       <div class="q"><b>面談があまり多くないのですが、③は入れる意味ありますか？</b><span>あります。回数が少ないうちに型を作っておくと、面談が増えたときにそのまま回ります。それに<b>記録が溜まること自体が資産</b>になります（2回目以降の準備が毎回ラクになります）。月に1回しかやっていなくても、そのまま入れて大丈夫です。</span></div>
+      <div class="q"><b>①でチャットProオプションに入っていないとダメですか？</b><span>いいえ、<b>無くても使えます。</b>加入していればチャット履歴をCSVで書き出して丸ごと読み込ませられますが、未加入でも画面から<b>代表的なやりとりを20〜30件</b>手で拾えば十分に機能します。むしろ「これはいい返信ができた」と思うものを厳選した方が、精度が上がることもあります。</span></div>
+      <div class="q"><b>返信を勝手に送られたりしませんか？</b><span>送りません。このスキルが作るのは<b>下書きだけ</b>です。あなたがコピーしてLINEに貼る、が唯一の送り方です。チャット履歴に含まれる個人情報も、外部に送ったり共有したりしません。</span></div>
       <div class="q"><b>自分のやり方をうまく説明できる自信がありません</b><span>大丈夫です。<b>「まとめて説明してください」とは聞かれません。</b>1問ずつ具体的に聞かれるので、答えていくだけです。答えにくいときは「たとえば◯◯な場合はどうしてますか？」と例を出して聞き直してくれます。</span></div>
       <div class="q"><b>出てきた下書きが自分の言葉じゃない気がします</b><span>「ここ違う」と伝えて直してもらってください。その修正が設定に反映されます。過去に自分が書いた文章を追加で貼ると、もっと寄ってきます。</span></div>
-      <div class="q"><b>3つとも使いこなせる気がしません</b><span><b>①だけで大丈夫です。</b>1つがちゃんと回るようになってから次に行ってください。3つ入れておいて、使うのは1つ、で全く問題ありません。</span></div>
-      <div class="q"><b>今あるスキルやデータが消えたりしませんか？</b><span>消えません。この導入でやるのは「<span class="tag-mono">.claude/skills/</span> の下に新しいフォルダを3つ作って、ファイルを置く」だけです。削除も上書きもしません。手順書でも <code>rm</code> や <code>mv</code> を使わないよう明記してあります。</span></div>
+      <div class="q"><b>4つとも使いこなせる気がしません</b><span><b>①だけで大丈夫です。</b>1つがちゃんと回るようになってから次に行ってください。4つ入れておいて、使うのは1つ、で全く問題ありません。</span></div>
+      <div class="q"><b>今あるスキルやデータが消えたりしませんか？</b><span>消えません。この導入でやるのは「<span class="tag-mono">.claude/skills/</span> の下に新しいフォルダを4つ作って、ファイルを置く」だけです。削除も上書きもしません。手順書でも <code>rm</code> や <code>mv</code> を使わないよう明記してあります。</span></div>
     </div>
   </section>
 
@@ -280,7 +300,8 @@ https://ryoya9595.github.io/my-koza-ai/</pre>
     <div class="scroll-x">
       <table class="tbl">
         <tr><th style="width:38%">症状</th><th>対処</th></tr>
-        <tr><td><span class="tag-mono">/my-client-feedback</span> などが出てこない</td><td>Claude Codeを再起動する</td></tr>
+        <tr><td><span class="tag-mono">/my-line-reply</span> などが出てこない</td><td>Claude Codeを再起動する</td></tr>
+        <tr><td>3つの返信案がどれも似てしまう</td><td>初回に決めた3形式の定義が曖昧。過去の返信から実例を拾い直して、違いを具体化する</td></tr>
         <tr><td>下書きが自分の言葉じゃない</td><td>「ここ違う」と伝えて直してもらう。過去に書いた文章を追加で貼るともっと合ってくる</td></tr>
         <tr><td>初回の質問が多くて面倒</td><td>一度で全部答えなくてOK。「後で決める」と言えば飛ばせる</td></tr>
         <tr><td>Windowsでコマンドが失敗する</td><td>「Windowsなので、PowerShell用のコマンドで進めて」と伝える</td></tr>
@@ -290,7 +311,7 @@ https://ryoya9595.github.io/my-koza-ai/</pre>
   </section>
 
   <footer>
-    <div>配布は <b class="tag-mono">my-koza-ai-kit.zip</b>（約20KB）。<br>中身は <span class="tag-mono">はじめにお読みください.md</span> ／ <span class="tag-mono">導入手順_ClaudeCodeに読ませる.md</span> ／ SKILL.md × 3 の5ファイル。</div>
+    <div>配布は <b class="tag-mono">my-koza-ai-kit.zip</b>（約30KB）。<br>中身は <span class="tag-mono">はじめにお読みください.md</span> ／ <span class="tag-mono">導入手順_ClaudeCodeに読ませる.md</span> ／ SKILL.md × 4 の6ファイル。</div>
     <div>必要環境：Claude Code（Mac / Windows）<br>Chrome拡張などの追加準備は不要です</div>
   </footer>
 

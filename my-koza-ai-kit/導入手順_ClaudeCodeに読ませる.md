@@ -1,4 +1,4 @@
-# 【Claude Codeへの指示】講座運営AIキット（3スキル）の導入
+# 【Claude Codeへの指示】講座運営AIキット（4スキル）の導入
 
 このファイルを読んだAIへ。以下の手順で進めてください。
 
@@ -6,15 +6,15 @@
 > ステップ2で担当者から明確な「はい」をもらうまで、ファイルのコピーや設定変更は一切しないでください。
 >
 > ⚠️ **重要②：既存のデータ・既存のスキルを絶対に消さないこと。**
-> この導入で行う変更は「`~/.claude/skills/` の下に新しいフォルダを3つ作って、それぞれにSKILL.mdを1つ置く」だけです。
+> この導入で行う変更は「`~/.claude/skills/` の下に新しいフォルダを4つ作って、それぞれにSKILL.mdを1つ置く」だけです。
 > - `rm` / `rm -rf` / `mv` は**一切使わない**（`mkdir -p` と `cp` だけで完結します）
 > - `~/.claude/skills/` の中にある**他のスキルフォルダには一切触らない**（中身を見る必要もありません）
 > - `~/.claude/settings.json`・`CLAUDE.md`・メモリ等、既存の設定ファイルは**書き換えない**
 > - 同名のスキルが**すでに存在した場合**は、上書きせずに担当者に
 >   「同名のスキルがすでにあります。上書きしますか？（既存の内容は消えます）」と確認してから進めること
 >
-> ⚠️ **重要③：3つ全部を「今すぐ使え」と勧めないこと。**
-> 導入は3つまとめてで構いませんが、**使い始めるのは1つずつ**です。ステップ5で必ず順番を案内してください。
+> ⚠️ **重要③：4つ全部を「今すぐ使え」と勧めないこと。**
+> 導入は4つまとめてで構いませんが、**使い始めるのは1つずつ**です。ステップ4で必ず順番を案内してください。
 
 > 💻 **Mac / Windows 共通で使えます。** コマンドはOSごとに書き分けてあるので、担当者の環境に合う方を使ってください。
 > - **Mac / Linux**、または Windows で **Git Bash** が使える場合 → 「Mac / Linux」の欄
@@ -46,26 +46,31 @@
 
 担当者に、これから入れるものを次の内容で説明してください。
 
-> 「講座運営を助けるスキルを3つ導入できます。
+> 「講座運営を助けるスキルを4つ導入できます。
 >
-> **① フィードバック下書き（`/my-client-feedback`）**
+> **① LINE返信の下書き（`/my-line-reply`）**
+> お客さんから届いた質問に対して、**3パターン**（シンプル形式／次の1手提案形式／丁寧形式）で返信案を出します。過去のチャット履歴を読み込ませることで、あなた自身の言い方を再現します。
+>
+> **② フィードバック下書き（`/my-client-feedback`）**
 > 毎月届く受講生の素材（写真・動画・報告フォーム）を読んで、前回との差分を出し、フィードバック文の下書きまで作ります。
 >
-> **② 電子書籍リメイク（`/my-ebook-remake`）**
+> **③ 電子書籍リメイク（`/my-ebook-remake`）**
 > 昔作った電子書籍や無料PDFを、今のお客さん像に合わせて作り直します。ゼロからではなく、旧版を読み込んで土台にします。
 >
-> **③ 面談準備（`/my-meeting-prep`）**
+> **④ 面談準備（`/my-meeting-prep`）**
 > 面談の前に相手の記録を集めて当日メモを作ります。面談後は文字起こしを渡すと、約束・宿題・申し送りを記録します。
 >
-> **入る場所**：`~/.claude/skills/` の下にフォルダが3つ増えるだけです
+> **入る場所**：`~/.claude/skills/` の下にフォルダが4つ増えるだけです
 >
 > **必要なもの**：Claude Codeだけです（Chrome拡張などは不要）
+>
+> ※ ①で過去のチャット履歴をCSVで書き出したい場合のみ、LINE公式アカウントの**チャットProオプション**（月額3,000円・税別）が必要です。**無くても使えます**（画面から代表20〜30件を手で拾えば十分です）。
 >
 > **このキットがやること／やらないこと**：
 > - やる：素材を整理する／下書きを作る／記録を残す
 > - やらない：**あなたの確認なしに誰かへ送信すること**／既存のファイルやスキルの削除・上書き／効果を断定する文章を書くこと
 >
-> ⚠️ **3つ入りますが、使い始めるのは1つずつです。** おすすめの順番は導入後にお伝えします。
+> ⚠️ **4つ入りますが、使い始めるのは1つずつです。** おすすめの順番は導入後にお伝えします。
 >
 > なお、どのスキルも**初回に「普段どうやっているか」を一問一答で聞きます。**そこで聞いた内容をもとに、あなた専用の設定として保存します。」
 
@@ -73,8 +78,8 @@
 
 上の説明のあと、こう聞いてください：
 
-> 「この3つのスキルを `~/.claude/skills/` に導入してよろしいですか？（はい／いいえ）
-> 3つのうち一部だけ入れることもできます。その場合はどれを入れるか教えてください。」
+> 「この4つのスキルを `~/.claude/skills/` に導入してよろしいですか？（はい／いいえ）
+> 4つのうち一部だけ入れることもできます。その場合はどれを入れるか教えてください。」
 
 - **「はい」以外**（いいえ・保留・質問だけ）の場合は、**導入せずに待つ**。質問には答えてよいが、勝手に進めない
 - **「①だけ入れたい」など一部指定**の場合は、指定されたものだけをコピーする
@@ -97,30 +102,32 @@ ls ~/.claude/skills/ 2>/dev/null
 Get-ChildItem "$env:USERPROFILE\.claude\skills" -ErrorAction SilentlyContinue
 ```
 
-- `my-client-feedback` / `my-ebook-remake` / `my-meeting-prep` が既にある → 「同名のスキルがすでにあります。上書きしますか？」と確認してから次へ
+- `my-line-reply` / `my-client-feedback` / `my-ebook-remake` / `my-meeting-prep` が既にある → 「同名のスキルがすでにあります。上書きしますか？」と確認してから次へ
 - 他のスキルが並んでいても**それらには一切触らない**
 
 ### 3-1. コピー先フォルダを作る（既存フォルダは消えません）
 
 **Mac / Linux**
 ```
-mkdir -p ~/.claude/skills/my-client-feedback ~/.claude/skills/my-ebook-remake ~/.claude/skills/my-meeting-prep
+mkdir -p ~/.claude/skills/my-line-reply ~/.claude/skills/my-client-feedback ~/.claude/skills/my-ebook-remake ~/.claude/skills/my-meeting-prep
 ```
 **Windows（PowerShell）**
 ```
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills\my-client-feedback","$env:USERPROFILE\.claude\skills\my-ebook-remake","$env:USERPROFILE\.claude\skills\my-meeting-prep"
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills\my-line-reply","$env:USERPROFILE\.claude\skills\my-client-feedback","$env:USERPROFILE\.claude\skills\my-ebook-remake","$env:USERPROFILE\.claude\skills\my-meeting-prep"
 ```
 
 ### 3-2. SKILL.md をコピーする
 
 **Mac / Linux**
 ```
+cp "<このキットのパス>/my-line-reply/SKILL.md"       ~/.claude/skills/my-line-reply/SKILL.md
 cp "<このキットのパス>/my-client-feedback/SKILL.md" ~/.claude/skills/my-client-feedback/SKILL.md
 cp "<このキットのパス>/my-ebook-remake/SKILL.md"    ~/.claude/skills/my-ebook-remake/SKILL.md
 cp "<このキットのパス>/my-meeting-prep/SKILL.md"    ~/.claude/skills/my-meeting-prep/SKILL.md
 ```
 **Windows（PowerShell）**
 ```
+Copy-Item "<このキットのパス>\my-line-reply\SKILL.md"       "$env:USERPROFILE\.claude\skills\my-line-reply\SKILL.md"
 Copy-Item "<このキットのパス>\my-client-feedback\SKILL.md" "$env:USERPROFILE\.claude\skills\my-client-feedback\SKILL.md"
 Copy-Item "<このキットのパス>\my-ebook-remake\SKILL.md"    "$env:USERPROFILE\.claude\skills\my-ebook-remake\SKILL.md"
 Copy-Item "<このキットのパス>\my-meeting-prep\SKILL.md"    "$env:USERPROFILE\.claude\skills\my-meeting-prep\SKILL.md"
@@ -130,11 +137,11 @@ Copy-Item "<このキットのパス>\my-meeting-prep\SKILL.md"    "$env:USERPRO
 
 **Mac / Linux**
 ```
-ls -la ~/.claude/skills/my-client-feedback/ ~/.claude/skills/my-ebook-remake/ ~/.claude/skills/my-meeting-prep/
+ls -la ~/.claude/skills/my-line-reply/ ~/.claude/skills/my-client-feedback/ ~/.claude/skills/my-ebook-remake/ ~/.claude/skills/my-meeting-prep/
 ```
 **Windows（PowerShell）**
 ```
-Get-ChildItem "$env:USERPROFILE\.claude\skills\my-client-feedback","$env:USERPROFILE\.claude\skills\my-ebook-remake","$env:USERPROFILE\.claude\skills\my-meeting-prep"
+Get-ChildItem "$env:USERPROFILE\.claude\skills\my-line-reply","$env:USERPROFILE\.claude\skills\my-client-feedback","$env:USERPROFILE\.claude\skills\my-ebook-remake","$env:USERPROFILE\.claude\skills\my-meeting-prep"
 ```
 
 ### 3-4. 完了を伝える
@@ -146,17 +153,20 @@ Get-ChildItem "$env:USERPROFILE\.claude\skills\my-client-feedback","$env:USERPRO
 
 再起動を伝えたあと、**必ず**次を伝えてください。
 
-> 「3つ入りましたが、**同時に始めないでください。** 一度に全部やろうとすると、だいたい全部中途半端になります。
+> 「4つ入りましたが、**同時に始めないでください。** 一度に全部やろうとすると、だいたい全部中途半端になります。
 >
 > **おすすめの順番はこれです。**
 >
-> **1️⃣ まず `/my-client-feedback`（フィードバック下書き）から**
-> 毎月必ず発生する作業なので、効果がすぐ分かります。ここで『AIに任せるとラクになる』感覚を掴むと、残り2つが一気に早くなります。
+> **1️⃣ まず `/my-line-reply`（LINE返信の下書き）から**
+> 毎日いちばん発生する作業なので、効果を実感する回数が一番多いです。ここで『AIに任せるとラクになる』感覚を掴むと、残りが一気に早くなります。
 >
-> **2️⃣ 次に `/my-ebook-remake`（電子書籍リメイク）**
-> 売上の入り口なので効きますが、①で操作に慣れてから取りかかった方が途中で止まりません。
+> **2️⃣ 次に `/my-client-feedback`（フィードバック下書き）**
+> 毎月必ず発生する作業なので、こちらも効果がすぐ分かります。
 >
-> **3️⃣ 最後に `/my-meeting-prep`（面談準備）**
+> **3️⃣ 次に `/my-ebook-remake`（電子書籍リメイク）**
+> 売上の入り口なので効きますが、①②で操作に慣れてから取りかかった方が途中で止まりません。
+>
+> **4️⃣ 最後に `/my-meeting-prep`（面談準備）**
 > ①②と違って毎日使うものではないので、後回しで構いません。**面談の回数が少なくても入れておく価値はあります。**回数が少ないうちに型を作っておくと、増えたときにそのまま回りますし、記録が溜まること自体が資産になります。
 >
 > まずは①を1回動かしてみてください。」
@@ -166,8 +176,10 @@ Get-ChildItem "$env:USERPROFILE\.claude\skills\my-client-feedback","$env:USERPRO
 > 「どのスキルも、**初めて動かすときにあなたのやり方を質問してきます。**
 > 面倒に感じるかもしれませんが、ここが一番大事なところです。丁寧に答えるほど、2回目以降の精度が変わります。
 >
-> 特に①では『**素材のどこを、どの順番で見ていますか？**』『**「順調」と思う基準は何ですか？**』のように、
-> 普段の仕事の中身を1つずつ聞かれます。そのあとで『今までに書いたフィードバックを2〜3個貼ってください』と続きます。
+> 特に①では『**よく来る質問を5つ挙げてください**』『**1件あたり何分くらいかけていますか？**』のように、
+> 普段のやりとりの中身を1つずつ聞かれます。そのあとで過去のチャット履歴を読み込ませ、
+> 『**これがシンプル形式、これが丁寧形式で合ってますか？**』と実例を見せて確認してきます。
+> **自分で定義を考える必要はありません。**
 >
 > **一問一答で進むので、うまくまとめて話せなくても大丈夫です。**答えにくいときは具体例を出して聞き直してくれます。」
 
@@ -177,11 +189,11 @@ Get-ChildItem "$env:USERPROFILE\.claude\skills\my-client-feedback","$env:USERPRO
 
 | 症状 | 対処 |
 |---|---|
-| `/my-client-feedback` 等が出てこない | Claude Codeを再起動したか確認。スキルフォルダにSKILL.mdがあるか確認（3-3のコマンド） |
+| `/my-line-reply` 等が出てこない | Claude Codeを再起動したか確認。スキルフォルダにSKILL.mdがあるか確認（3-3のコマンド） |
 | `mkdir`/`cp` が動かない | Windowsでbashが使えない環境。PowerShell用のコマンド（各手順の「Windows」欄）に切り替える |
 | `~` のパスが見つからないと言われる | Windowsでは `~` が使えないことがある。`$env:USERPROFILE` に置き換える |
 | 一部だけ入れたい | 3-1・3-2で該当するスキルの行だけ実行すればよい |
-| 3つとも使いこなせる気がしないと言われる | 「①だけで大丈夫です」と伝える。無理に3つ使わせない |
+| 4つとも使いこなせる気がしないと言われる | 「①だけで大丈夫です」と伝える。無理に4つ使わせない |
 
 ## アンインストール
 
@@ -189,17 +201,19 @@ Get-ChildItem "$env:USERPROFILE\.claude\skills\my-client-feedback","$env:USERPRO
 
 **Mac / Linux**
 ```
+rm -rf ~/.claude/skills/my-line-reply
 rm -rf ~/.claude/skills/my-client-feedback
 rm -rf ~/.claude/skills/my-ebook-remake
 rm -rf ~/.claude/skills/my-meeting-prep
 ```
 **Windows（PowerShell）**
 ```
+Remove-Item -Recurse "$env:USERPROFILE\.claude\skills\my-line-reply"
 Remove-Item -Recurse "$env:USERPROFILE\.claude\skills\my-client-feedback"
 Remove-Item -Recurse "$env:USERPROFILE\.claude\skills\my-ebook-remake"
 Remove-Item -Recurse "$env:USERPROFILE\.claude\skills\my-meeting-prep"
 ```
 
-- 消してよいのは**この3つのフォルダだけ**。`.claude/skills/` そのものや他のスキルフォルダは絶対に消さない
+- 消してよいのは**この4つのフォルダだけ**。`.claude/skills/` そのものや他のスキルフォルダは絶対に消さない
 - 実行前に必ず「この3つのフォルダだけを削除します。よろしいですか？」と確認する
 - **一部だけ消したい場合は、該当する行だけ実行する**
