@@ -82,6 +82,14 @@
   .btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
   .btn.primary{background:var(--gold);color:#1a1206;border-color:transparent}
   .btn .sz{font-weight:600;font-size:12px;opacity:.7}
+  .kit .row{background:var(--panel-2);box-shadow:none}
+  .det{margin-top:16px}
+  .det summary{cursor:pointer;font-weight:800;font-size:14px;color:var(--gold);list-style:none;
+    display:inline-flex;align-items:center;gap:8px;padding:8px 0}
+  .det summary::-webkit-details-marker{display:none}
+  .det summary::before{content:"\25b8";font-size:12px}
+  .det[open] summary::before{content:"\25be"}
+  .det summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
   .msgbox{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow-x:auto}
   .msgbox pre{margin:0;font-family:var(--sans);font-size:13.5px;line-height:1.75;white-space:pre-wrap;word-break:break-word}
   .hint{color:var(--muted);font-size:13px;margin:14px 0 0}
@@ -177,69 +185,47 @@
   </section>
 
   <section class="kit">
-    <h2>この1式を、そのまま渡せる</h2>
-    <p class="sub">Zipをダウンロードして、下の案内文と一緒に送るだけ。受け取った人は、自分のClaude Codeに読ませれば導入できます。<b>勝手にインストールはされません</b>——必ず「導入していいですか？」の確認が入ります。</p>
-    <div class="kit-actions">
-      <a class="btn primary" href="my-koza-ai-kit.zip" download>⬇ my-koza-ai-kit.zip <span class="sz">約30KB</span></a>
-      <button class="btn" id="copyMsg">📋 案内文をコピー</button>
+    <h2>導入は、この4ステップ</h2>
+    <p class="sub">ZipとプロンプトをAIエージェントに渡すだけ。ターミナルでコマンドを打ったり、中のファイルを自分で読んだりする必要はありません。</p>
+    <div class="use">
+      <div class="row"><div class="n">1</div><div class="t"><b>Zipをダウンロードする</b>
+        <p>約30KBの軽いファイルです。解凍しなくてOK。</p>
+        <div style="margin-top:12px"><a class="btn primary" href="my-koza-ai-kit.zip" download>⬇ my-koza-ai-kit.zip <span class="sz">約30KB</span></a></div>
+      </div></div>
+      <div class="row"><div class="n">2</div><div class="t"><b>導入プロンプトをコピーする</b>
+        <p>AIエージェントに貼り付ける指示文です。中身を読む必要はありません。</p>
+        <div style="margin-top:12px"><button class="btn" id="copyMsg" type="button">📋 導入プロンプトをコピー</button></div>
+      </div></div>
+      <div class="row"><div class="n">3</div><div class="t"><b>Zipをアップロードして、プロンプトを貼り付ける</b>
+        <p>Claude CodeなどのAIエージェントのチャットに、Zipファイルをドラッグ＆ドロップ。そのまま、コピーしたプロンプトを貼り付けて送信します。</p></div></div>
+      <div class="row"><div class="n">4</div><div class="t"><b>スキルの導入が始まる</b>
+        <p>あとはAIエージェントが進めます。<b>勝手にインストールはされません</b>——必ず「導入してよろしいですか？」の確認が入ります。<b>4つのうち一部だけ入れることもできます。</b></p></div></div>
     </div>
-    <div class="msgbox">
-<pre id="sendMsg">【講座運営AIキット｜Claude Codeスキル4点】
+    <details class="det">
+      <summary>導入プロンプトの中身を見る</summary>
+      <div class="msgbox" style="margin-top:10px">
+<pre id="sendMsg">添付した my-koza-ai-kit.zip を解凍して、中の「導入手順_ClaudeCodeに読ませる.md」を読み、その手順どおりに導入を進めてください。
 
-講座や継続サポートの運営で増えていく「めんどくさいところ」を
-Claude Codeに任せるスキルです。4つ入っています。
+■ 進め方のお願い
+・導入の前に、4つのスキルがそれぞれ何をするか／どこに入るか／何をしないかを
+　説明してから、「導入してよろしいですか？」と確認してください。
+　私が「はい」と答えるまではインストールしないでください。
+・4つのうち一部だけ入れることもできると教えてください。
+・私のOS（Mac / Windows）に合うコマンドを選んでください。
+・同じ名前のスキルが既にある場合は、上書きせずに必ず確認してください。
 
-① LINE返信の下書き（/my-line-reply）
-お客さんから届いた質問に、3パターンで返信案を出します。
-「シンプル形式」「次の1手提案形式」「丁寧形式」の3つを出して、
-そのうえで「今回はこれが合いそうです」と1つ推します。
-過去のチャット履歴を読み込ませると、あなた自身の言い方を
-再現します。
+■ 導入が終わったら
+・Claude Codeの再起動が必要かどうかを教えてください。
+・使う順番（①LINE返信 → ②フィードバック → ③電子書籍 → ④面談準備）と、
+　まずは①だけ回してみればいいことを教えてください。
+・どのスキルも初回は「普段どうやっているか」を一問一答で聞いてくること、
+　そこが精度を決めるので面倒でも答えたほうがいいことを伝えてください。
 
-② フィードバック下書き（/my-client-feedback）
-毎月届く受講生の素材（写真・動画・報告）を整理して、前回との
-差分を出し、フィードバック文の下書きまで作ります。
-
-③ 電子書籍リメイク（/my-ebook-remake）
-昔作った電子書籍や無料PDFを、今のお客さん像に合わせて
-作り直します。旧版を読み込んで土台にするので、ゼロからより
-ずっとラクです。
-
-④ 面談準備（/my-meeting-prep）
-面談前に相手の記録を集めて当日メモを作ります。面談後は
-文字起こしを渡すと約束・宿題・申し送りを記録します。
-
-■ 事前に必要なもの
-・Claude Code（Mac / Windows どちらでもOK）
-それだけです。Chrome拡張などは要りません。
-
-※ ①で過去のチャット履歴をCSVで書き出したい場合のみ、
-　 LINE公式アカウントの「チャットProオプション」
-　 （月額3,000円・税別）が必要です。無くても使えます。
-
-■ 導入のしかた
-1. Zipを解凍する
-2. 出てきた「my-koza-ai-kit」フォルダの中の
-   「はじめにお読みください.md」を読む
-3. Claude Codeにこう頼む：
-   my-koza-ai-kit フォルダの中の「導入手順_ClaudeCodeに読ませる.md」を
-   読んで、その手順どおりに進めてください。
-4. Claude Codeが内容を説明したあと「導入してよろしいですか？」と
-   聞いてくるので、OKなら「はい」と答える
-5. Claude Codeを再起動する
-
-■ 大事なこと
-4つ入りますが、使い始めるのは1つずつにしてください。
-おすすめは ①→②→③→④ の順です。まず①だけ回してみてください。
-
-初回はどのスキルも「普段どうやっているか」を一問一答で
-聞いてきます。ここが一番大事なところなので、面倒でも
-答えてあげてください。ここが精度を決めます。
-
-くわしい解説ページ（Zipもここから落とせます）：
+くわしい解説ページ：
 https://ryoya9595.github.io/my-koza-ai/</pre>
-    </div>
-    <p class="hint">※ 導入で増えるのは <b class="tag-mono">.claude/skills/</b> の下のフォルダ4つだけ。既存のスキルや設定が消えることはありません。<br>※ このページのURLをそのまま送ってもOK。受け取った人が上のボタンからZipを落とせます。</p>
+      </div>
+    </details>
+    <p class="hint">※ 導入で増えるのは <b class="tag-mono">.claude/skills/</b> の下のフォルダ4つだけ。既存のスキルや設定が消えることはありません。<br>※ 人に渡すときは、このページのURLを送るだけでOK。受け取った人がここから同じ4ステップで導入できます。</p>
   </section>
 
   <section>
@@ -272,7 +258,7 @@ https://ryoya9595.github.io/my-koza-ai/</pre>
 
   <section>
     <h2>導入は<span style="color:var(--gold)">確認つき</span>。勝手には入らない。</h2>
-    <p class="sub">受け取った人が Claude Code に手順書を読ませると、この順で進みます。</p>
+    <p class="sub">プロンプトを送ったあと、Claude Codeはこの順で進みます。</p>
     <div class="use">
       <div class="row"><div class="n">1</div><div class="t"><b>4つのスキルが何なのかを説明する</b><p>何ができて、何をしないか。どこにファイルが入るか。</p></div></div>
       <div class="row"><div class="n">2</div><div class="t"><b>「導入してよろしいですか？」と聞く</b><p>「はい」をもらうまで、ファイルのコピーも設定変更も一切しません。<b>4つのうち一部だけ入れることもできます。</b></p></div></div>
@@ -323,7 +309,7 @@ https://ryoya9595.github.io/my-koza-ai/</pre>
   var btn=document.getElementById('copyMsg'), msg=document.getElementById('sendMsg');
   if(!btn||!msg)return;
   btn.addEventListener('click',function(){
-    var text=msg.innerText;
+    var text=msg.textContent||msg.innerText;
     var ok=function(){var o=btn.innerHTML;btn.textContent='✓ コピーしました';setTimeout(function(){btn.innerHTML=o;},1700);};
     var fb=function(){var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);ok();};
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(ok,fb);}else{fb();}
